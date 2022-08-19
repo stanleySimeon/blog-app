@@ -50,9 +50,9 @@ To get a local copy up and running follow these simple example steps.
 - To install rspec: `gem install rspec`
 - To run all the tests: `rspec ./spec`
 
-## Authors
+## Author
 
-👤 **Author1**
+👤 **Stanley SIMEON**
 
 - GitHub: [@stanleySimeon](https://github.com/stanleySimeon)
 - Twitter: [@mstanleyme](https://twitter.com/mstanleyme)
