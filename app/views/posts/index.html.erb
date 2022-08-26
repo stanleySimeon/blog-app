@@ -1,1 +1,41 @@
-<h1>Here is a list of posts for a given user</h1>
+<h1>List of posts</h1>
+
+<div class="container user_view">
+  <div class="user_avatar">
+    <img src=<%= @user.photo %> alt="user avatar" height="16" width="16" />
+  </div>
+  <div class="user_info">
+    <h2><%= @user.name %></h2>
+    <p>Numbner of posts: <%= @user.posts_counter %></p>
+  </div>
+</div>
+
+
+<%@posts.each do |post|%>
+  <div class="post">
+    <div class="post_title">
+        <h3>Post #<%= post.id %></h3>
+    </div>
+    <div class="post_content">
+      <p><%= post.text %></p>
+    </div>
+    <div class="comments_likes_counter">
+      <div class="comment_count">
+        <h4>Comments: <%= post.comments_counter %></h4>
+      </div>
+      <div class="like_count">
+        <h4>Likes: <%= post.likes_counter %></h4>
+      </div>
+  </div>
+  <div class="post_comments">
+    <%post.recent_comments.each do |comment| %>
+     <p> <%= @author.name %>: <%= comment.text %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="pagination">
+  <button type="button" class="btn btn-primary btn-lg"> pagination </button>
+</div>
+
+
