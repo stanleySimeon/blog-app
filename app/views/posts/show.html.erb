@@ -1,1 +1,23 @@
-<h1>Here is a list of posts for a given user</h1>
+<div class="universal_post">
+  <div class="post_top">
+    <h2 class="title">Post</h2>
+    <div class="likes_n_comments">
+      <div class="comments">
+        <h3>Comments: <%= @post.comments_counter %></h3>
+      </div>
+      <div class="likes">
+        <h3>Likes: <%= @post.likes_counter %></h3>
+      </div>
+    </div>
+  </div>
+  <div class="post_middle">
+    <p><%= @post.text %></p>
+  </div>
+</div>
+<div class="post_comments">
+  <div class="comment">
+    <% @post.recent_comments.each do |comment| %>
+      <p><%= comment.author.name %> : <%= comment.text %></p>
+    <% end %>
+  </div>
+</div>
