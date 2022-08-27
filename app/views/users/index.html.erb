@@ -7,7 +7,8 @@
         <img src=<%= user.photo%>>
       </div>
       <div class="user_name_and_posts_counter">
-        <h2><%= user.name %></h2>
+       <span class="user_name"><h2><%= user.name %></h2></span>
+       <span class="user_posts_counter"><p>Number of posts: <%= user.posts_counter %></p></span>
       </div>
     </div>
 <% end %>
