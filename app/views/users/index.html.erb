@@ -1,8 +1,10 @@
+<%= stylesheet_link_tag 'application' %>
+
 <h1>Users List</h1>
 
 <% @users.each do |user| %>
   <%= link_to user_path(user) do%>
-    <div>
+    <div class="users-container">
       <div class="user_view">
         <img src=<%= user.photo%>>
       </div>
