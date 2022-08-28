@@ -1,17 +1,23 @@
-<%= stylesheet_link_tag 'application' %>
+<%= stylesheet_link_tag 'users' %>
 
-<h1>Users List</h1>
+<div class="h-16 w-full bg-midnight justify-items-center md:justify-items-center mb-12">
+  <h1 class="md:text-3xl font-bold text-white text-center">Users</h1>
+</div>
 
+<div class="container w-full-center h-full-center p-0">
 <% @users.each do |user| %>
+ <div class="container w-full md:p-2 h-48 mb-8 bg-white rounded md:rounded-lg">
   <%= link_to user_path(user) do%>
-    <div class="users-container">
-      <div class="user_view">
+    <div class="h-full w-full-center flex justify-between gap-4">
+      <div class="w-48 h-full-center bg-midnight hover:bg-blue align-center justify-center">
         <img src=<%= user.photo%>>
       </div>
-      <div class="user_name_and_posts_counter">
-       <span class="user_name"><h2><%= user.name %></h2></span>
-       <span class="user_posts_counter"><p>Number of posts: <%= user.posts_counter %></p></span>
+      <div class="container w-full-center h-full-center bg-orange-600">
+        <div class="user_name"><h2><%= user.name %></h2></div>
+        <div class="user_posts_counter"><p>Number of posts: <%= user.posts_counter %></p></div>
       </div>
     </div>
 <% end %>
+ </div>
 <% end %>
+</div>

@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
+gem 'sassc-rails'
+
+gem 'bootstrap', '~> 5.2.0'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3'
 
@@ -74,3 +78,5 @@ group :test do
 end
 
 gem 'ruby-lsp', '~> 0.2.3', group: :development
+
+gem "tailwindcss-rails", "~> 2.0"
