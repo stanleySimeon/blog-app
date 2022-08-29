@@ -1,5 +1,7 @@
-<div class="h-16 w-full bg-midnight align-center justify-center mb-12">
-  <h1 class="text-3xl font-bold text-white text-center">Users</h1>
+<div class="flex md:selection:space-x-2 h-auto w-full md:py-4 bg-midnight mb-12">
+  <div class="flex-1">
+    <h1 class="md:text-3xl font-bold text-white text-center"><%= @user.name%></h1>
+  </div>
 </div>
 
 <div class="container user_view">
@@ -10,7 +12,7 @@
     <span class="user_name"><h2><%= @user.name %></h2></span>
     <span class="user_posts_counter"><p>Number of posts: <%= @user.posts_counter %></p></span>
     <span class="add_post">
-      <%= link_to "Add new post", user_posts_url(@user)%>
+      <%= link_to "Add new post", new_user_post_path(@user)%>
     </span>
   </div>
 </div>

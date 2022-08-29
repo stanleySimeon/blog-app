@@ -10,13 +10,14 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         red: '#ff0000',
         green: '#00ff00',
         yellow: '#ffff00',
         blue: '#0000ff',
+        blueSecond: '#009BD6',
         magenta: '#ff00ff',
         cyan: '#00ffff',
         black: '#000000',
@@ -29,7 +30,7 @@ module.exports = {
         current: 'currentColor',
         white: '#ffffff',
         purple: '#3f3cbb',
-        midnight: '#121063',
+        midnight: '#00719c',
         metal: '#565584',
         tahiti: {
           light: '#67e8f9',
