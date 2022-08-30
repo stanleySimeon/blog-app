@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe 'Users pages test', type: :feature do
   describe 'index page' do
     before :each do
-      @user_first = User.create(name: 'Clara', photo: 'mybaby.png', bio: 'A cute baby', post_counter: 0)
-      @user_second = User.create(name: 'Joelle', photo: 'mybaby.png', bio: 'A beautiful lady', post_counter: 1)
-      @user_third = User.create(name: 'Pedro', photo: 'mybaby.png', bio: 'A good guy', post_counter: 2)
+      @user_first = User.create(name: 'Clara', photo: 'mybaby.png', bio: 'A cute baby', posts_counter: 0)
+      @user_second = User.create(name: 'Joelle', photo: 'mybaby.png', bio: 'A beautiful lady', posts_counter: 1)
+      @user_third = User.create(name: 'Pedro', photo: 'mybaby.png', bio: 'A good guy', posts_counter: 2)
     end
 
     it 'check users#index path' do
