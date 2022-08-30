@@ -1,4 +1,4 @@
-<div class="flex md:selection:space-x-2 h-auto w-full md:py-4 bg-midnight mb-12">
+<div class="flex md:selection:space-x-2 h-auto w-full md:py-4 bg-midnight mb-12 sticky top-0 z-50">
   <div class="flex-1">
     <h1 class="md:text-3xl font-bold text-white text-center"><%= @user.name%></h1>
   </div>
@@ -28,14 +28,14 @@
     <%@posts.each do |post|%>
       <div class="container w-full h-auto p-2 mb-4 rounded md:rounded-md bg-blueSecond/20 backdrop-blur-sm">
         <%= link_to user_post_path(user_id: post.author_id, id: post.id) do%>
-          <div class="min-w-full md:min-w-0 h-auto bg-white/50 p-3 mb-6 rounded md:rounded-lg shadow-md">
+          <div class="min-w-full md:min-w-0 h-auto bg-white/80 p-3 mb-6 rounded md:rounded-lg shadow-md">
             <div>
               <h3 class="md:text-lg font-medium text-black md:mb-3">Post #<%= post.title %></h3>
             </div>
             <p class="md:text-normal font-normal text-grayDark md:mb-3"> <%= post.text %></p>
             <div class="min-w-full md:min-w-0 h-auto flex justify-end pr-12">
               <div class="w-auto gap-5 flex">
-                <div class="w-auto h-auto">
+                <div class="w-auto h-auto mb-4">
                   <h3>Comments: <%= post.comments_counter%></h3>
                 </div>
                 <div class="w-auto h-auto">
