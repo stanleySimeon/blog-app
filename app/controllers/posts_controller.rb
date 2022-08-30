@@ -1,3 +1,4 @@
+# Fix n+1 problem:
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
