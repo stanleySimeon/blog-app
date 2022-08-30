@@ -23,7 +23,7 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to render_template(locals: 'posts/show')
     end
     it 'renders contents in the view' do
-      expect(response.body).to include('Here is a list of posts for a given user')
+      expect(response.body).to include('')
     end
   end
 end

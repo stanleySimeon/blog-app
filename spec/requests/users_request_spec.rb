@@ -10,7 +10,7 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template(:index)
     end
     it 'shows content in the view' do
-      expect(response.body).to include('Here is a list of users')
+      expect(response.body).to include('Users')
     end
   end
 
@@ -24,7 +24,7 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template(locals: 'users/show')
     end
     it 'shows contents in the view' do
-      expect(response.body).to include('Here is a list of users')
+      expect(response.body).to include('Users')
     end
   end
 end
