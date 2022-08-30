@@ -5,7 +5,7 @@ RSpec.describe 'The index users page', type: :feature do
     @user = User.create(name: 'Martial', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Full-Stack Software Engineer', posts_counter: 5)
     @post = Post.create(title: 'Love must lead', text: 'This is my first post', likes_counter: 0, comments_counter: 0, author: @user)
     @comment = Comment.create(text: 'This is my first comment', post: Post.first, author: User.first)
-    visit user_posts_path(user_id: @user.id)
+    visit user_posts_path(@user.id)
   end
 
   it "shouls display the user's avatar" do
