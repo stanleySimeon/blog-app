@@ -7,6 +7,8 @@ gem 'sassc-rails'
 
 gem 'bootstrap', '~> 5.2.0'
 
+gem 'bullet'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3'
 
