@@ -11,6 +11,9 @@
 # end
 
 # These inflection rules are supported but not enabled by default:
-# ActiveSupport::Inflector.inflections(:en) do |inflect|
-#   inflect.acronym "RESTful"
-# end
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+  inflect.acronym "RESTful"
+  # setup custom inflection rules for 'model' or 'mode_l'
+  inflect.irregular "model", "models"
+  inflect.irregular "mode_l", "mode_ls"
+end
