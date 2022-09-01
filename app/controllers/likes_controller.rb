@@ -10,7 +10,7 @@ class LikesController < ApplicationController
     if @like.save
       redirect_to user_post_path(user_id: @post.author_id, id: @post.id), notice: 'Like was successfully created.'
     else
-      render :new, alert: 'Likes was not successfully created.'
+      render :new, alert: 'Like was not created.'
     end
   end
 end

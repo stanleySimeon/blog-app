@@ -18,10 +18,33 @@ class PostsController < ApplicationController
     @post.likes_counter = 0
     @post.comments_counter = 0
 
-    if @post.save
-      redirect_to user_path(id: @post.author_id), notice: 'Post was successfully created.'
-    else
-      render :new, alert: 'Post was not successfully created.'
+    respond_to do |format|
+      format.html do
+        if @post.save
+            flash[:success] = 'Post was successfully created.'
+            redirect_to user_posts_path(current_user)
+        else
+          flash.now[:error] = 'Post was not created.'
+          render.new
+        end
+      end
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @user = @post.author_id
+    respond_to do |format|
+      format.html do
+        if @post.destroy
+          @post.user.decrement!(:posts_counter)
+          flash[:success] = 'Post was successfully deleted.'
+          redirect_to user_posts_path(@user)
+        else
+          flash.now[:error] = 'Post was not deleted.'
+          render.show
+        end
+      end
     end
   end
 
