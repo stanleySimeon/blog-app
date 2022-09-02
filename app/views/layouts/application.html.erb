@@ -12,18 +12,17 @@
 
   <body>
     <main class="container-fluid h-screen bg-primary">
-      <div class="app_title">
-       <h1>My Blog App</h1>
-     </div>
       <div class="">
-          <% if user_signed_in? %>
-            <div>welcome <%= current_user.name %></div>
-            <%= button_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn" %>
-          <% end %>
+        <%if user_signed_in? %>
+          <div class="container flex p-0 justify-end">
+            welcome<%= current_user.name %>
+          </div>
+          <%= button_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn" %>
+        <% end %>
         </div>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
-    <%= yield %>
+        <%= yield %>
       </div>
     </main>
   </body>
