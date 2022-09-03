@@ -10,7 +10,6 @@ development:
   password: <%= ENV.fetch("DATABASE_PASSWORD") {'Martial@5009'}%>
   host: localhost
 
-
 test:
   <<: *default
   database: blog-app_test
