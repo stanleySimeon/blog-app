@@ -12,9 +12,6 @@ development:
 test:
   <<: *default
   database: blog-app_test
-  username: postgres
-  password: <%= ENV.fetch("DATABASE_PASSWORD") {'Martial@5009'}%>
-  host: localhost
 
 production:
   <<: *default
