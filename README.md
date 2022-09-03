@@ -22,12 +22,22 @@ To get a local copy up and running follow these simple example steps.
 - `git clone` https://github.com/stanleySimeon/blog-app/.git
 - `cd /blog-app.git`
 - `bundle instal`
+> To install `Tailwind css in your rails projects
+    1- Terminal
+    2- Navigate to your repo name
+    3- Add this 2 commands:
+        - `./bin/bundle add tailwindcss-rail` and press Enter key
+        - `./bin/rails tailwindcss:install` Enter key
+
+> Now you have Tailwind successfully installed in your rails project
+
 
 ### Prerequisites
 
 - `Ruby`
 - `Ruby on Rails(as a gem)`
 - `Postgresql database`
+- `Tailwind CSS`
 
 ### Install
 
@@ -50,13 +60,19 @@ To get a local copy up and running follow these simple example steps.
 - To install rspec: `gem install rspec`
 - To run all the tests: `rspec ./spec`
 
-## Author
+## Authors
 
 👤 **Stanley SIMEON**
 
 - GitHub: [@stanleySimeon](https://github.com/stanleySimeon)
 - Twitter: [@mstanleyme](https://twitter.com/mstanleyme)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/stanleysimeon/)
+
+👤 **Pedro Marques**
+
+- GitHub: https://github.com/ppmarq1
+- Twitter: https://twitter.com/ppmarq1
+- LinkedIn: https://br.linkedin.com/in/pedroalmeidamarques/
 
 ## 🤝 Contributing
 

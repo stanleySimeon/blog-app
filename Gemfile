@@ -7,14 +7,18 @@ gem 'sassc-rails'
 
 gem 'bootstrap', '~> 5.2.0'
 
+gem 'bullet'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
+gem 'devise_invitable'
+
 # Use postgresql as the database for Active Record
-gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'devise'
 gem 'pg', '~> 1.1'
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
