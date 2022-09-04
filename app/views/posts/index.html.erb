@@ -1,43 +1,61 @@
-<h1>List of posts</h1>
-
-<div class="container user_view">
-  <div class="user_avatar">
-    <img src=<%= @user.photo%>>
-  </div>
-  <div class="user_info">
-    <span class="user_name"><h2><%= @user.name %></h2></span>
-    <span class="user_posts_counter"><p>Number of posts: <%= @user.posts_counter %></p></span>
-    <span class="add_post">
-      <%= link_to "Add new post", user_posts_url(@user)%>
-    </span>
+<div class="flex md:selection:space-x-2 h-auto w-full md:py-4 bg-midnight mb-12 sticky top-0 z-50">
+  <div class="flex-1">
+    <h1 class="md:text-3xl font-bold text-white text-center"><%= @user.name%></h1>
   </div>
 </div>
 
-<%@posts.each do |post|%>
-  <%= link_to user_post_path(user_id: post.author_id, id: post.id) do%>
-    <div class="post">
-      <div class="post_title">
-          <h3>Post #<%= post.id %></h3>
-      </div>
-      <div class="post_content">
-        <p><%= post.text %></p>
-      </div>
-      <div class="comments_likes_counter">
-        <div class="comment_count">
-          <h4>Comments: <%= post.comments_counter %></h4>
+<div class="container h-auto p-0 mb-12">
+<div class="container w-full md:p-2 h-auto mb-6 bg-white rounded md:rounded-lg">
+      <div class="h-auto-center w-full-center flex justify-between gap-4">
+        <div class="w-auto-center h-auto-center bg-grayLight hover:bg-gray align-center justify-items-center">
+          <img class="md:w-48 md:h-48" src=<%= @user.photo %> alt="<%= @user.name%> avatar"/>
         </div>
-        <div class="like_count">
-          <h4>Likes: <%= post.likes_counter %></h4>
+        <div class="container w-full-center h-auto-center flex justify-between p-0">
+          <div class="flex space-x-2 h-auto">
+            <div class="flex-1 md:my-auto">
+              <h2 class="md:text-2xl font-bold text-midnight text-center"><%= @user.name %></h2>
+            </div>
+          </div>
+          <div class="flex sm:flex-col space-x-2 h-auto">
+            <div class="flex-1 md:w-52 md:mt-40 pr-8">
+              <p class="md:text-lg text-grayDark font-light">Number of posts: <%= @user.posts_counter %></p>
+            </div>
+          </div>
         </div>
-    </div>
-    <div class="post_comments">
-      <%post.recent_comments.each do |comment| %>
-      <p> <%= comment.author.name %>: <%= comment.text %></p>
-      <% end %>
-    </div>
-  <%end%>
-<% end %>
-
-<div class="pagination">
-  <button type="button" class="btn btn-primary btn-lg"> pagination </button>
+      </div>
+  </div>
+  <div class="container w-full p-0 mb-16">
+    <%@posts.each do |post|%>
+      <div class="container w-full h-auto p-2 mb-4 rounded md:rounded-md bg-blueSecond/20 backdrop-blur-sm">
+        <%= link_to user_post_path(user_id: post.author_id, id: post.id) do%>
+          <div class="min-w-full md:min-w-0 h-auto bg-white/80 p-3 mb-6 rounded md:rounded-lg shadow-md">
+            <div>
+              <h3 class="md:text-lg font-medium text-black md:mb-3">Post #<%= post.title %></h3>
+            </div>
+            <p class="md:text-normal font-normal text-grayDark md:mb-3"> <%= post.text %></p>
+            <div class="min-w-full md:min-w-0 h-auto flex justify-end pr-12">
+              <div class="w-auto gap-5 flex">
+                <div class="w-auto h-auto mb-4">
+                  <h3>Comments: <%= post.comments_counter%></h3>
+                </div>
+                <div class="w-auto h-auto">
+                  <h3>Likes: <%= post.likes_counter%></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        <%end%>
+        <div class="post_comments">
+          <%post.recent_comments.each do |comment| %>
+            <p> <%= comment.author.name %>: <%= comment.text %></p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="container-full h-auto flex justify-center">
+  <button class="bg-midnight mb-12 hover:bg-midnight/90 text-white font-medium py-2 px-4 rounded align-middle">
+    Pagination
+  </button>
 </div>

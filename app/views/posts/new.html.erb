@@ -1,11 +1,24 @@
-<div class="container" id="form-group">
-    <h1>Add a new post</h1>
-    <%= form_with model:@posts, url: user_posts_path do |form| %>
-        <%= form.label :title %><br>
-        <%= form.text_field :title %><br>
-        <%= form.label :text %><br>
-        <%= form.text_area :text, cols: 30, rows: 10 %><br>
-        <%= form.submit "Submit" %>
+<div class="flex md:selection:space-x-2 h-auto w-full md:py-4 bg-midnight mb-12 sticky top-0 z-50">
+  <div class="flex-1">
+    <h1 class="md:text-3xl font-bold text-white text-center">New Post</h1>
+  </div>
+</div>
+
+<div class="container p-0 flex justify-center mt-40">
+  <div class="center">
+    <h1 class="md:text-3xl font-bold text-blueSecond text-center mb-12">Add a new post</h1>
+    <%= form_with model:@posts, url: new_user_post_path do |f| %>
+      <h2 class="text-grayDark font-medium md:text-xl">
+        <%= f.label :title %><br>
+      </h2>
+      <%= f.text_field :title, placeholder: "Add title", class: "focus:outline-none focus:border-none w-full p-2 rounded" %><br>
+      <h2 class="text-grayDark font-medium md:text-xl mt-3"><%= f.label :text %></h2>
+      <%= f.text_area :text, placeholder: "Your post...", cols: 50, rows: 10, class: "focus:outline-none focus:border-none w-full p-2 rounded" %><br>
+      <div class="w-full flex justify-center mb-12 mt-5">
+        <button class="bg-midnight hover:bg-midnight/90 text-white font-medium py-2 px-4 rounded align-middle">
+          <%= f.submit "Submit", class: "btn btn-primary submit-btn" %>
+        </button>
+      </div>
     <% end %>
-    <p>Let's test it out!</p>
+  </div>
 </div>

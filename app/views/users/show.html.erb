@@ -1,32 +1,60 @@
 <%= stylesheet_link_tag 'application' %>
 
-<div class="container user-header">
-  <div class="col-lg-6" id="head">
-    <img class="user-avatar" <%= @user.photo%> alt="user avatar" />
-    <div class="user-info">
-      <h2><%= @user.name %></h2>
-      <h3>Number of posts: <%= @user.posts_counter%></h3>
-    </div>
-    <%= link_to "Add a post", user_post_path(@user)%>
-  </div>
-  <div class="user_bio">
-    <h2>Bio</h2>
-    <p> <%= @user.bio %></p>
+<div class="flex md:selection:space-x-2 h-auto w-full md:py-4 bg-midnight mb-12 sticky top-0 z-50">
+  <div class="flex-1">
+    <h1 class="md:text-3xl font-bold text-white text-center"><%= @user.name%></h1>
   </div>
 </div>
-<%@user.recent_posts.each do |post| %>
-  <%= link_to user_posts_path(@user) do %>
-    <div class="user_post">
-      <h3>Post<%= post.id %></h3>
-      <p> <%= post.text %></p>
-        <div class="comments_likes_counter">
-          <div class="comment_count">
-            <h3>Comments: <%= post.comments_counter%></h3>
+
+<div class="container w-full-center h-full-center md:p-2">
+ <div class="container w-full md:p-2 h-auto mb-6 bg-white rounded md:rounded-lg">
+    <div class="h-auto-center w-full-center flex justify-between gap-4">
+      <div class="w-auto-center h-auto-center bg-grayLight hover:bg-gray align-center justify-items-center">
+        <img class="md:w-48 md:h-48" src=<%= @user.photo %> alt="<%= @user.name%> avatar"/>
+      </div>
+      <div class="container w-full-center h-auto-center flex justify-between p-0">
+        <div class="flex space-x-2 h-auto">
+          <div class="flex-1 md:my-auto">
+            <h2 class="md:text-2xl font-bold text-midnight text-center"><%= @user.name %></h2>
           </div>
-          <div class="like_count">
-            <h3>Likes: <%= post.likes_counter%></h3>
+        </div>
+        <div class="flex sm:flex-col space-x-2 h-auto">
+          <div class="flex-1 md:w-52 md:mt-40 pr-8">
+            <p class="md:text-lg text-grayDark font-light">Number of posts: <%= @user.posts_counter %></p>
           </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-<% end %>
-<%= link_to "See all posts", user_posts_path(user_id: @user.id) %>
+ </div>
+  <div class="w-full h-auto backdrop-blur-sm bg-blueSecond/10 rounded md:rounded-lg p-3 mb-6">
+    <h2 class="md:text-2xl font-medium text-black md:mb-4">Bio</h2>
+    <p class="text-grayDark font-normal"> <%= @user.bio %></p>
+  </div>
+  <div class="container p-0">
+    <%@user.recent_posts.each do |post| %>
+    <%= link_to user_post_path(@user) do %>
+      <div class="min-w-full md:min-w-0 h-auto bg-white/50 p-3 mb-6 rounded md:rounded-lg shadow-md">
+        <div>
+          <h3 class="md:text-lg font-medium text-black md:mb-3">Post #<%= post.id %></h3>
+        </div>
+        <p class="md:text-normal font-normal text-grayDark md:mb-3"> <%= post.text %></p>
+        <div class="min-w-full md:min-w-0 h-auto flex justify-end pr-12">
+          <div class="w-auto gap-5 flex">
+            <div class="w-auto h-auto">
+              <h3>Comments: <%= post.comments_counter%></h3>
+            </div>
+            <div class="w-auto h-auto">
+              <h3>Likes: <%= post.likes_counter%></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <% end %>
+  </div>
+  <div class="w-full flex justify-center mb-12">
+    <button class="bg-midnight hover:bg-midnight/90 text-white font-medium py-2 px-4 rounded align-middle">
+      <%= link_to "See all posts", user_posts_path(user_id: @user.id) %>
+    </button>
+  </div>
+</div>

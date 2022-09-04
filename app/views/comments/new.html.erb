@@ -1,9 +1,19 @@
-<div>
-    <h1>Add new comment</h1>
+<div class="flex md:selection:space-x-2 h-auto w-full md:py-4 bg-midnight mb-12 sticky top-0 z-50">
+  <div class="flex-1">
+    <h1 class="md:text-3xl font-bold text-white text-center">Comment</h1>
+  </div>
+</div>
 
+<div class="container p-0 flex justify-center mt-48">
+  <div class="center">
+      <h1 class="md:text-3xl font-bold text-blueSecond text-center mb-12">Add new comment</h1>
     <%= form_with model: @comment, url: user_post_comments_path(user_id: @post.author_id, post_id: @post.id) do |f| %>
-        <%= f.label :text %><br>
-        <%= f.text_area :text, cols: 30, rows: 5 %><br>
-        <%= f.submit "Submit", class: "btn btn-primary submit-btn" %>
+      <%= f.text_area :text, placeholder: "Your comment...", cols: 50, rows: 10 %><br>
+      <div class="w-full flex justify-center mb-12 mt-5">
+        <button class="bg-midnight hover:bg-midnight/90 text-white font-medium py-2 px-4 rounded align-middle">
+          <%= f.submit "Submit", class: "btn btn-primary submit-btn" %>
+        </button>
+      </div>
     <% end %>
+  </div>
 </div>

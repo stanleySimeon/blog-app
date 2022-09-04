@@ -61,6 +61,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_04_004734) do
     t.string "photo"
     t.text "bio"
     t.integer "posts_counter"
+    t.string "email", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
