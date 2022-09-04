@@ -305,7 +305,6 @@ DEPENDENCIES
   capybara
   debug
   devise
-  devise_invitable
   importmap-rails
   jbuilder
   pg (~> 1.1)
